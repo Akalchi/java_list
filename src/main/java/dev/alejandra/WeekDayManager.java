@@ -33,4 +33,8 @@ public class WeekDayManager {
         return weekDays.remove(day);
     }
 
+    public String getDay(int index) {
+        return weekDays.get(index);
+    }
+
 }
