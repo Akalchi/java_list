@@ -1,6 +1,7 @@
 package dev.alejandra;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WeekDayManager {
@@ -39,6 +40,10 @@ public class WeekDayManager {
 
     public boolean containsDay(String day) {
         return weekDays.contains(day);
+    }
+
+    public void sortDays() {
+        Collections.sort(weekDays);
     }
 
 }
