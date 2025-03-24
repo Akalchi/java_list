@@ -81,7 +81,26 @@ public class WeekDayManagerTest {
     public void testGetDayInvalidIndex() {
        
         weekDayManager.createWeekDays();
+    }
+
+    @Test
+    public void testContainsDay() {
        
+        weekDayManager.createWeekDays();
+      
+        boolean contains = weekDayManager.containsDay("Friday");
+        
+        assertTrue(contains);
+    }
+    
+    @Test
+    public void testContainsDayNotFound() {
+      
+        weekDayManager.createWeekDays();
+        
+        boolean contains = weekDayManager.containsDay("NotADay");
+       
+        assertFalse(contains);
     }
 
 }
