@@ -20,7 +20,11 @@ public class WeekDayManager {
         weekDays.add("Saturday");
         weekDays.add("Sunday");
     }
-    
+
+    public List<String> getWeekDays() {
+        return new ArrayList<>(weekDays);
+    }
+
     public int getSize() {
         return weekDays.size();
     }
