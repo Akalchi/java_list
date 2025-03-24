@@ -1,8 +1,10 @@
 package dev.alejandra;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,9 +29,9 @@ public class WeekDayManagerTest {
         assertEquals(7, weekDayManager.getSize());
     }
 
-     @Test
+    @Test
     public void testGetWeekDays() {
-        
+
         weekDayManager.createWeekDays();
         
         List<String> weekDays = weekDayManager.getWeekDays();
@@ -42,6 +44,28 @@ public class WeekDayManagerTest {
         assertEquals("Friday", weekDays.get(4));
         assertEquals("Saturday", weekDays.get(5));
         assertEquals("Sunday", weekDays.get(6));
+    }
+
+     @Test
+    public void testRemoveDay() {
+       
+        weekDayManager.createWeekDays();
+        
+        boolean result = weekDayManager.removeDay("Monday");
+        
+        assertTrue(result);
+        assertEquals(6, weekDayManager.getSize());
+    }
+    
+    @Test
+    public void testRemoveDayNotFound() {
+
+        weekDayManager.createWeekDays();
+        
+        boolean result = weekDayManager.removeDay("NotADay");
+        
+        assertFalse(result);
+        assertEquals(7, weekDayManager.getSize());
     }
 
 }
