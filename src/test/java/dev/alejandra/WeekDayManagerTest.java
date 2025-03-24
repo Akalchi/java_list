@@ -19,4 +19,10 @@ public class WeekDayManagerTest {
         assertEquals(0, weekDayManager.getSize());
     }
 
+    @Test
+    public void testCreateWeekDays() {
+        weekDayManager.createWeekDays();
+        assertEquals(7, weekDayManager.getSize());
+    }
+
 }
