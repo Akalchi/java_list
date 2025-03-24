@@ -37,4 +37,8 @@ public class WeekDayManager {
         return weekDays.get(index);
     }
 
+    public boolean containsDay(String day) {
+        return weekDays.contains(day);
+    }
+
 }
