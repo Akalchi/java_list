@@ -4,8 +4,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,11 +46,11 @@ public class WeekDayManagerTest {
         assertEquals("Sunday", weekDays.get(6));
     }
 
-     @Test
+    @Test
     public void testRemoveDay() {
        
         weekDayManager.createWeekDays();
-        
+
         boolean result = weekDayManager.removeDay("Monday");
         
         assertTrue(result);
@@ -66,6 +66,24 @@ public class WeekDayManagerTest {
         
         assertFalse(result);
         assertEquals(7, weekDayManager.getSize());
+    }
+
+    @Test
+    public void testGetDay() {
+        
+        weekDayManager.createWeekDays();
+      
+        String day = weekDayManager.getDay(2);
+        
+        assertEquals("Wednesday", day);
+    }
+    
+    @Test
+    public void testGetDayInvalidIndex() {
+       
+        weekDayManager.createWeekDays();
+       
+        assertThrows(IndexOutOfBoundsException.class, () -> weekDayManager.getDay(10));
     }
 
 }
