@@ -120,4 +120,14 @@ public class WeekDayManagerTest {
         assertEquals("Wednesday", weekDays.get(6));
     }
 
+    @Test
+    public void testClearDays() {
+        
+        weekDayManager.createWeekDays();
+      
+        weekDayManager.clearDays();
+       
+        assertEquals(0, weekDayManager.getSize());
+    }
+
 }
