@@ -103,4 +103,21 @@ public class WeekDayManagerTest {
         assertFalse(contains);
     }
 
+    @Test
+    public void testSortDays() {
+   
+        weekDayManager.createWeekDays();
+       
+        weekDayManager.sortDays();
+       
+        List<String> weekDays = weekDayManager.getWeekDays();
+        assertEquals("Friday", weekDays.get(0));
+        assertEquals("Monday", weekDays.get(1));
+        assertEquals("Saturday", weekDays.get(2));
+        assertEquals("Sunday", weekDays.get(3));
+        assertEquals("Thursday", weekDays.get(4));
+        assertEquals("Tuesday", weekDays.get(5));
+        assertEquals("Wednesday", weekDays.get(6));
+    }
+
 }
